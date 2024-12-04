@@ -1,0 +1,159 @@
+1. Project Overview
+What is InsightX?
+InsightX is a powerful, all-in-one mobile app designed for roadside assistance, focusing on user convenience during vehicle breakdowns or emergencies. Unlike traditional apps that rely on SMS or cellular networks, InsightX utilizes a robust pre-existing database, enabling real-time monitoring, offline functionality, and automated alerts. This ensures that users receive quick and effective help when they need it most.
+Main Objectives:
+Provide a reliable, quick-response roadside assistance service.
+Ensure uninterrupted functionality, even in low-connectivity areas.
+Empower users to manage and track their assistance requests with ease.
+Core Features:
+User Authentication: Secure login/signup via email or social media.
+Service Request Form: Allows users to select service types and submit requests.
+Real-Time Tracking: Monitors the location of the service provider and updates users on their arrival status.
+Automated Notifications: Alerts users when a service is on its way, when the service arrives, or if there are any updates.
+Offline Database Support: Ensures that data is stored locally and can be accessed without the internet.
+User Profile Management: Users can update their profile details, preferences, and service history.
+Feedback System: Users can rate and provide feedback for the service received.
+2. Installation Guide
+Prerequisites:
+Flutter SDK (Version: Latest stable release): Ensure the SDK is installed by following Flutter's installation guide.
+Dart SDK: Comes bundled with Flutter SDK.
+IDE: Visual Studio Code, Android Studio, or IntelliJ IDEA with Flutter and Dart plugins installed.
+Git: Used to clone the repository and manage version control.
+Cloning and Setting Up:
+Clone the Repository:
+bash
+Copy code
+git clone https://github.com/username/insightx.git
+Navigate to the Project Directory:
+bash
+Copy code
+cd insightx
+Install Dependencies:
+bash
+Copy code
+flutter pub get
+Run the App:
+To run on an emulator or physical device, use:
+bash
+Copy code
+flutter run
+Run the App in Release Mode (for testing final builds):
+bash
+Copy code
+flutter run --release
+Environment Setup Verification:
+Run the command flutter doctor to ensure all necessary tools are installed and configured correctly.
+3. Usage Instructions
+User Flow:
+Sign Up/Sign In: Users can register or log in using their email or third-party authentication options like Google or Facebook.
+Navigating the Dashboard: The main dashboard displays options to request assistance, track current services, view service history, and access account settings.
+Detailed Features:
+Requesting Assistance:
+Tap on the "Request Assistance" button.
+Select the type of service needed (e.g., tire change, towing).
+Enter any additional details or notes.
+Confirm and submit the request.
+Tracking Services:
+After submitting a request, users can view real-time updates on the service’s location and estimated arrival time.
+Emergency Alerts and Notifications:
+Push notifications alert the user when the service is en route, has arrived, or when there are changes in the status of their request.
+User Profile Management:
+Users can edit their profile, manage contact information, and adjust preferences.
+Advanced Features:
+Offline Mode: Allows users to view past requests and details, even without connectivity, thanks to local data storage.
+Feedback and Ratings: Users can rate their service experience and leave feedback for future improvements.
+4. Architecture and Design
+High-Level Architecture:
+Frontend (Client-Side): Developed with Flutter for cross-platform compatibility. The UI/UX focuses on ease of use and accessibility.
+Backend Integration: The backend database serves as the core for data storage, tracking, and offline operations.
+Key Components:
+User Authentication Module: Utilizes Firebase Authentication for secure user sign-in/sign-up.
+Service Request Module: Handles request data, submission, and status updates.
+Tracking System: Integrates with location services to provide real-time location tracking.
+Technical Design Choices:
+State Management: Implemented using Provider for managing app state efficiently.
+Data Storage: Utilizes SQLite for local storage and offline data accessibility.
+APIs: Custom-built RESTful APIs handle user requests, service data retrieval, and notifications.
+User Flow Diagram:
+Include a visual flowchart diagram to illustrate how users navigate through the app.
+5. Development Guide
+Folder Structure:
+lib/: Contains core code files for the app, including UI components, service logic, and app configuration.
+assets/: Stores static assets such as images, icons, and fonts.
+test/: Includes unit tests for app logic and integration tests for user flows.
+Coding Standards:
+Dart Language Practices:
+Use camelCase for naming variables, functions, and classes.
+Keep code modular by creating reusable widgets and functions.
+Comment complex sections of the code and maintain clear documentation.
+Flutter Best Practices:
+Follow Flutter's widget composition model.
+Optimize performance by using const constructors when applicable.
+Running Tests:
+Unit Tests: Run with flutter test to verify the accuracy of individual components.
+Integration Tests: Test complete user interactions with flutter drive.
+Debugging Tips:
+Use flutter run --debug for real-time debugging.
+Leverage Flutter DevTools for performance analysis and widget inspection.
+6. API Documentation
+API Overview: InsightX features a set of RESTful APIs for handling service requests, tracking, and user management.
+Detailed Endpoints:
+POST /services/request: Submits a new service request.
+Request Body:
+json
+Copy code
+{
+  "userId": "12345",
+  "serviceType": "towing",
+  "details": "Flat tire on Highway 50"
+}
+Response:
+json
+Copy code
+{
+  "status": "success",
+  "message": "Request submitted successfully",
+  "expectedArrivalTime": "15 min"
+}
+GET /services/{userId}/tracking: Retrieves real-time tracking data for a user's service.
+Parameters:
+userId: Unique identifier for the user.
+Response:
+json
+Copy code
+{
+  "status": "inProgress",
+  "currentLocation": {
+    "latitude": 37.7749,
+    "longitude": -122.4194
+  },
+  "estimatedArrival": "10 min"
+}
+Authentication:
+All API calls are secured with token-based authentication, and only authorized users can submit requests or access tracking data.
+7. Troubleshooting and FAQ
+App Issues:
+Problem: Service not being tracked accurately.
+Solution: Check the device’s GPS and location permissions; ensure the device has a clear line of sight to the sky for better GPS signal.
+Problem: App fails to load or crashes on startup.
+Solution: Run flutter clean and flutter pub get to refresh dependencies and clear any cached data.
+FAQ:
+Q: How do I update my contact information? A: Navigate to the Profile section and tap on "Edit Profile" to make changes.
+Q: Will I be charged for the service if I cancel my request? A: Cancellations are free as long as the service has not already been dispatched. Refer to the terms and conditions for more details.
+8. License Information
+MIT License:
+This project is licensed under the MIT License, which permits anyone to use, modify, and distribute the code as long as the original license text and copyright notice are included.
+9. Contact Information
+Project Maintainer: Darshan Reddy V
+Email: [dharsxn46@gmail.com]
+GitHub Repository: [https://github.com/darshanreddy6/InsightX]
+LinkedIn: [www.linkedin.com/in/darsh6]  
+Support: For technical support or questions, please reach out via email or open an issue in the repository.
+10. Acknowledgments
+Libraries and Tools:
+Flutter and Flutter Flow for developing the app.
+Firebase for authentication services.
+SQLite for local data storage.
+Special Thanks:
+Thank you to open-source contributors who maintain the libraries used in this project.
+Appreciation to mentors and communities that provided guidance during development.
