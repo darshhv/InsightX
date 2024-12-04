@@ -18,7 +18,7 @@ InsightX is a cutting-edge roadside assistance application designed to provide d
 ## Tech Stack
 1. Development Tools
 Flutter: Used for building the app's cross-platform interface.
-Flutter Flow: A no-code/low-code platform for rapid development of the app.
+Flutter Flow: A diverse platform for rapid development of the app.
 Dart SDK: The programming language used in Flutter.
 Android Studio / Visual Studio Code: Integrated development environments for coding and debugging.
 Git & GitHub: For version control and collaboration on the project.
