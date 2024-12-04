@@ -1,0 +1,772 @@
+import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+
+import 'sos_c_o_n_n_model.dart';
+export 'sos_c_o_n_n_model.dart';
+
+class SosCONNWidget extends StatefulWidget {
+  const SosCONNWidget({super.key});
+
+  @override
+  State<SosCONNWidget> createState() => _SosCONNWidgetState();
+}
+
+class _SosCONNWidgetState extends State<SosCONNWidget> {
+  late SosCONNModel _model;
+
+  final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  @override
+  void initState() {
+    super.initState();
+    _model = createModel(context, () => SosCONNModel());
+  }
+
+  @override
+  void dispose() {
+    _model.dispose();
+
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () => FocusScope.of(context).unfocus(),
+      child: Scaffold(
+        key: scaffoldKey,
+        backgroundColor: Color(0xFFF0F5F9),
+        appBar: AppBar(
+          backgroundColor: Color(0xFF181819),
+          automaticallyImplyLeading: false,
+          leading: FlutterFlowIconButton(
+            borderColor: Colors.transparent,
+            borderRadius: 30,
+            borderWidth: 1,
+            buttonSize: 60,
+            icon: Icon(
+              Icons.arrow_back_rounded,
+              color: Colors.white,
+              size: 30,
+            ),
+            onPressed: () async {
+              context.pop();
+            },
+          ),
+          title: Text(
+            'INSIGHTX',
+            style: FlutterFlowTheme.of(context).headlineSmall.override(
+                  fontFamily: 'Raleway',
+                  color: FlutterFlowTheme.of(context).primaryBackground,
+                  fontSize: 20,
+                  letterSpacing: 0.0,
+                ),
+          ),
+          actions: [],
+          centerTitle: true,
+          elevation: 2,
+        ),
+        body: SafeArea(
+          top: true,
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Material(
+                  color: Colors.transparent,
+                  elevation: 2,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  child: Container(
+                    width: MediaQuery.sizeOf(context).width,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    child: Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(24, 24, 24, 24),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text(
+                            'InsightX: Roadside Help at Your Fingertips!',
+                            textAlign: TextAlign.center,
+                            style: FlutterFlowTheme.of(context)
+                                .headlineMedium
+                                .override(
+                                  fontFamily: 'Outfit',
+                                  color: Color(0xFF161C24),
+                                  fontSize: 32,
+                                  letterSpacing: 0.0,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                          ),
+                          Text(
+                            'Location: Nagarjuna College of Engineering and Technology, Chikkaballapura, Bangalore',
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Manrope',
+                                  color: Color(0xFF161C24),
+                                  fontSize: 14,
+                                  letterSpacing: 0.0,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                          ),
+                          Container(
+                            width: MediaQuery.sizeOf(context).width,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(8),
+                              border: Border.all(
+                                color: Color(0xFFE0E3E7),
+                                width: 1,
+                              ),
+                            ),
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  16, 16, 16, 16),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Text(
+                                    'BIG Motors ',
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleMedium
+                                        .override(
+                                          fontFamily: 'Manrope',
+                                          color: Color(0xFF080808),
+                                          fontSize: 16,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                  ),
+                                  Text(
+                                    'Rating: ★★★★☆ (4.5)',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Manrope',
+                                          color: Color(0xFF161C24),
+                                          fontSize: 14,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                  ),
+                                  Text(
+                                    'Experience: 10 years',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Manrope',
+                                          color: Color(0xFF161C24),
+                                          fontSize: 14,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                  ),
+                                  Text(
+                                    'Price Range: ₹500 - ₹1500',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Manrope',
+                                          color: Color(0xFF161C24),
+                                          fontSize: 14,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                  ),
+                                  Text(
+                                    'Estimated Arrival Time: 15 minutes',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Manrope',
+                                          color: Color(0xFF161C24),
+                                          fontSize: 14,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                  ),
+                                  Text(
+                                    'Services Offered: Flat tire repair, towing, fuel delivery, battery jump start',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Manrope',
+                                          color: Color(0xFF161C24),
+                                          fontSize: 14,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                  ),
+                                  FFButtonWidget(
+                                    onPressed: () {
+                                      print('Button pressed ...');
+                                    },
+                                    text: 'Request Service',
+                                    options: FFButtonOptions(
+                                      width: MediaQuery.sizeOf(context).width,
+                                      height: 40,
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0, 0, 0, 0),
+                                      iconPadding:
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              0, 0, 0, 0),
+                                      color: Color(0xFF27AE52),
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Manrope',
+                                            color: Colors.white,
+                                            fontSize: 14,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.w500,
+                                          ),
+                                      elevation: 0,
+                                      borderRadius: BorderRadius.circular(8),
+                                    ),
+                                  ),
+                                ].divide(SizedBox(height: 12)),
+                              ),
+                            ),
+                          ),
+                          Container(
+                            width: MediaQuery.sizeOf(context).width,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(8),
+                              border: Border.all(
+                                color: Color(0xFFE0E3E7),
+                                width: 1,
+                              ),
+                            ),
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  16, 16, 16, 16),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Text(
+                                    'Car Buddy',
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleMedium
+                                        .override(
+                                          fontFamily: 'Manrope',
+                                          color: Color(0xFF060606),
+                                          fontSize: 16,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                  ),
+                                  Text(
+                                    'Rating: ★★★★★ (5.0)',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Manrope',
+                                          color: Color(0xFF161C24),
+                                          fontSize: 14,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                  ),
+                                  Text(
+                                    'Experience: 8 years',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Manrope',
+                                          color: Color(0xFF161C24),
+                                          fontSize: 14,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                  ),
+                                  Text(
+                                    'Price Range: ₹600 - ₹1200',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Manrope',
+                                          color: Color(0xFF161C24),
+                                          fontSize: 14,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                  ),
+                                  Text(
+                                    'Estimated Arrival Time: 10 minutes',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Manrope',
+                                          color: Color(0xFF161C24),
+                                          fontSize: 14,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                  ),
+                                  Text(
+                                    'Services Offered: Towing, fuel delivery',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Manrope',
+                                          color: Color(0xFF161C24),
+                                          fontSize: 14,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                  ),
+                                  FFButtonWidget(
+                                    onPressed: () {
+                                      print('Button pressed ...');
+                                    },
+                                    text: 'Request Service',
+                                    options: FFButtonOptions(
+                                      width: MediaQuery.sizeOf(context).width,
+                                      height: 40,
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0, 0, 0, 0),
+                                      iconPadding:
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              0, 0, 0, 0),
+                                      color: Color(0xFF27AE52),
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Manrope',
+                                            color: Colors.white,
+                                            fontSize: 14,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.w500,
+                                          ),
+                                      elevation: 0,
+                                      borderRadius: BorderRadius.circular(8),
+                                    ),
+                                  ),
+                                ].divide(SizedBox(height: 12)),
+                              ),
+                            ),
+                          ),
+                          Container(
+                            width: MediaQuery.sizeOf(context).width,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(8),
+                              border: Border.all(
+                                color: Color(0xFFE0E3E7),
+                                width: 1,
+                              ),
+                            ),
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  16, 16, 16, 16),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Text(
+                                    'QuickFix Mechanics',
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleMedium
+                                        .override(
+                                          fontFamily: 'Manrope',
+                                          color: Color(0xFF070707),
+                                          fontSize: 16,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                  ),
+                                  Text(
+                                    'Rating: ★★★☆☆ (3.8)',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Manrope',
+                                          color: Color(0xFF161C24),
+                                          fontSize: 14,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                  ),
+                                  Text(
+                                    'Experience: 5 years',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Manrope',
+                                          color: Color(0xFF161C24),
+                                          fontSize: 14,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                  ),
+                                  Text(
+                                    'Price Range: ₹400 - ₹800',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Manrope',
+                                          color: Color(0xFF161C24),
+                                          fontSize: 14,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                  ),
+                                  Text(
+                                    'Estimated Arrival Time: 20 minutes',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Manrope',
+                                          color: Color(0xFF161C24),
+                                          fontSize: 14,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                  ),
+                                  Text(
+                                    'Services Offered: Tire changes, battery replacement',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Manrope',
+                                          color: Color(0xFF161C24),
+                                          fontSize: 14,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                  ),
+                                  FFButtonWidget(
+                                    onPressed: () {
+                                      print('Button pressed ...');
+                                    },
+                                    text: 'Request Service',
+                                    options: FFButtonOptions(
+                                      width: MediaQuery.sizeOf(context).width,
+                                      height: 40,
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0, 0, 0, 0),
+                                      iconPadding:
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              0, 0, 0, 0),
+                                      color: Color(0xFF27AE52),
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Manrope',
+                                            color: Colors.white,
+                                            fontSize: 14,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.w500,
+                                          ),
+                                      elevation: 0,
+                                      borderRadius: BorderRadius.circular(8),
+                                    ),
+                                  ),
+                                ].divide(SizedBox(height: 12)),
+                              ),
+                            ),
+                          ),
+                          Container(
+                            width: MediaQuery.sizeOf(context).width,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(8),
+                              border: Border.all(
+                                color: Color(0xFFE0E3E7),
+                                width: 1,
+                              ),
+                            ),
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  16, 16, 16, 16),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Text(
+                                    'Select Services',
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleMedium
+                                        .override(
+                                          fontFamily: 'Manrope',
+                                          color: Colors.white,
+                                          fontSize: 16,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                  ),
+                                  Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Theme(
+                                        data: ThemeData(
+                                          checkboxTheme: CheckboxThemeData(
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.only(
+                                                bottomLeft: Radius.circular(0),
+                                                bottomRight: Radius.circular(0),
+                                                topLeft: Radius.circular(0),
+                                                topRight: Radius.circular(0),
+                                              ),
+                                            ),
+                                          ),
+                                          unselectedWidgetColor:
+                                              Color(0x4C0B67BC),
+                                        ),
+                                        child: Checkbox(
+                                          value: _model.checkboxValue1 ??= true,
+                                          onChanged: (newValue) async {
+                                            safeSetState(() => _model
+                                                .checkboxValue1 = newValue!);
+                                          },
+                                          side: BorderSide(
+                                            width: 2,
+                                            color: Color(0x4C0B67BC),
+                                          ),
+                                          activeColor: Color(0xFF2797FF),
+                                        ),
+                                      ),
+                                      Text(
+                                        'Flat Tire Repair',
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Manrope',
+                                              color: Color(0xFF161C24),
+                                              fontSize: 14,
+                                              letterSpacing: 0.0,
+                                              fontWeight: FontWeight.w500,
+                                            ),
+                                      ),
+                                    ].divide(SizedBox(width: 8)),
+                                  ),
+                                  Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Theme(
+                                        data: ThemeData(
+                                          checkboxTheme: CheckboxThemeData(
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.only(
+                                                bottomLeft: Radius.circular(0),
+                                                bottomRight: Radius.circular(0),
+                                                topLeft: Radius.circular(0),
+                                                topRight: Radius.circular(0),
+                                              ),
+                                            ),
+                                          ),
+                                          unselectedWidgetColor:
+                                              Color(0x4C0B67BC),
+                                        ),
+                                        child: Checkbox(
+                                          value: _model.checkboxValue2 ??=
+                                              false,
+                                          onChanged: (newValue) async {
+                                            safeSetState(() => _model
+                                                .checkboxValue2 = newValue!);
+                                          },
+                                          side: BorderSide(
+                                            width: 2,
+                                            color: Color(0x4C0B67BC),
+                                          ),
+                                          activeColor: Color(0xFF2797FF),
+                                        ),
+                                      ),
+                                      Text(
+                                        'Towing Service',
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Manrope',
+                                              color: Color(0xFF161C24),
+                                              fontSize: 14,
+                                              letterSpacing: 0.0,
+                                              fontWeight: FontWeight.w500,
+                                            ),
+                                      ),
+                                    ].divide(SizedBox(width: 8)),
+                                  ),
+                                  Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Theme(
+                                        data: ThemeData(
+                                          checkboxTheme: CheckboxThemeData(
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.only(
+                                                bottomLeft: Radius.circular(0),
+                                                bottomRight: Radius.circular(0),
+                                                topLeft: Radius.circular(0),
+                                                topRight: Radius.circular(0),
+                                              ),
+                                            ),
+                                          ),
+                                          unselectedWidgetColor:
+                                              Color(0x4C0B67BC),
+                                        ),
+                                        child: Checkbox(
+                                          value: _model.checkboxValue3 ??= true,
+                                          onChanged: (newValue) async {
+                                            safeSetState(() => _model
+                                                .checkboxValue3 = newValue!);
+                                          },
+                                          side: BorderSide(
+                                            width: 2,
+                                            color: Color(0x4C0B67BC),
+                                          ),
+                                          activeColor: Color(0xFF2797FF),
+                                        ),
+                                      ),
+                                      Text(
+                                        'Fuel Delivery',
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Manrope',
+                                              color: Color(0xFF161C24),
+                                              fontSize: 14,
+                                              letterSpacing: 0.0,
+                                              fontWeight: FontWeight.w500,
+                                            ),
+                                      ),
+                                    ].divide(SizedBox(width: 8)),
+                                  ),
+                                  Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Theme(
+                                        data: ThemeData(
+                                          checkboxTheme: CheckboxThemeData(
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.only(
+                                                bottomLeft: Radius.circular(0),
+                                                bottomRight: Radius.circular(0),
+                                                topLeft: Radius.circular(0),
+                                                topRight: Radius.circular(0),
+                                              ),
+                                            ),
+                                          ),
+                                          unselectedWidgetColor:
+                                              Color(0x4C0B67BC),
+                                        ),
+                                        child: Checkbox(
+                                          value: _model.checkboxValue4 ??=
+                                              false,
+                                          onChanged: (newValue) async {
+                                            safeSetState(() => _model
+                                                .checkboxValue4 = newValue!);
+                                          },
+                                          side: BorderSide(
+                                            width: 2,
+                                            color: Color(0x4C0B67BC),
+                                          ),
+                                          activeColor: Color(0xFF2797FF),
+                                        ),
+                                      ),
+                                      Text(
+                                        'Battery Jump Start',
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Manrope',
+                                              color: Color(0xFF161C24),
+                                              fontSize: 14,
+                                              letterSpacing: 0.0,
+                                              fontWeight: FontWeight.w500,
+                                            ),
+                                      ),
+                                    ].divide(SizedBox(width: 8)),
+                                  ),
+                                ].divide(SizedBox(height: 12)),
+                              ),
+                            ),
+                          ),
+                          Container(
+                            width: MediaQuery.sizeOf(context).width,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(8),
+                              border: Border.all(
+                                color: Color(0xFFE0E3E7),
+                                width: 1,
+                              ),
+                            ),
+                          ),
+                          Container(
+                            width: MediaQuery.sizeOf(context).width,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(8),
+                              border: Border.all(
+                                color: Color(0xFFE0E3E7),
+                                width: 1,
+                              ),
+                            ),
+                            child: Stack(
+                              children: [
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      16, 16, 16, 16),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      Align(
+                                        alignment: AlignmentDirectional(0, 0),
+                                        child: FFButtonWidget(
+                                          onPressed: () {
+                                            print('Button pressed ...');
+                                          },
+                                          text:
+                                              'Book Your Service Appointment Now',
+                                          options: FFButtonOptions(
+                                            height: 40,
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    16, 0, 16, 0),
+                                            iconPadding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0, 0, 0, 0),
+                                            color: Color(0xFF076205),
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .override(
+                                                      fontFamily: 'Raleway',
+                                                      color: Colors.white,
+                                                      letterSpacing: 0.0,
+                                                    ),
+                                            elevation: 0,
+                                            borderRadius:
+                                                BorderRadius.circular(8),
+                                          ),
+                                        ),
+                                      ),
+                                    ].divide(SizedBox(height: 12)),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ].divide(SizedBox(height: 20)),
+                      ),
+                    ),
+                  ),
+                ),
+              ].divide(SizedBox(height: 24)),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
