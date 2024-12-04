@@ -1,0 +1,752 @@
+import '/flutter_flow/flutter_flow_animations.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_web_view.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:math';
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import 'package:simple_gradient_text/simple_gradient_text.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
+
+import 'homepage_model.dart';
+export 'homepage_model.dart';
+
+class HomepageWidget extends StatefulWidget {
+  const HomepageWidget({
+    super.key,
+    this.xx,
+  });
+
+  final FFUploadedFile? xx;
+
+  @override
+  State<HomepageWidget> createState() => _HomepageWidgetState();
+}
+
+class _HomepageWidgetState extends State<HomepageWidget>
+    with TickerProviderStateMixin {
+  late HomepageModel _model;
+
+  final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  final animationsMap = <String, AnimationInfo>{};
+
+  @override
+  void initState() {
+    super.initState();
+    _model = createModel(context, () => HomepageModel());
+
+    animationsMap.addAll({
+      'containerOnPageLoadAnimation': AnimationInfo(
+        loop: true,
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          ShimmerEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 1400.0.ms,
+            color: Color(0xFFE70818),
+            angle: 0.524,
+          ),
+        ],
+      ),
+      'imageOnPageLoadAnimation': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          ShimmerEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            color: Color(0x80FFFFFF),
+            angle: 0.524,
+          ),
+        ],
+      ),
+    });
+  }
+
+  @override
+  void dispose() {
+    _model.dispose();
+
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () => FocusScope.of(context).unfocus(),
+      child: Scaffold(
+        key: scaffoldKey,
+        backgroundColor: Color(0xFFF1F4F8),
+        drawer: Drawer(
+          elevation: 16,
+          child: WebViewAware(
+            child: Stack(
+              children: [
+                Align(
+                  alignment: AlignmentDirectional(-0.22, -0.77),
+                  child: Container(
+                    width: 500,
+                    height: 1000,
+                    decoration: BoxDecoration(
+                      color: Color(0xFFC0BDBD),
+                    ),
+                    child: Container(
+                      width: 20,
+                      height: 80,
+                      decoration: BoxDecoration(
+                        color: Color(0xFFF6F4F4),
+                      ),
+                      child: Container(
+                        width: 100,
+                        height: 100,
+                        decoration: BoxDecoration(
+                          color:
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                        ),
+                        child: Stack(
+                          children: [
+                            Align(
+                              alignment: AlignmentDirectional(0, -1),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(0),
+                                child: Image.asset(
+                                  'assets/images/Solid_black.png',
+                                  width: 310,
+                                  height: 117,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ),
+                            Align(
+                              alignment: AlignmentDirectional(-0.98, -0.83),
+                              child: FFButtonWidget(
+                                onPressed: () async {
+                                  if (scaffoldKey.currentState!.isDrawerOpen ||
+                                      scaffoldKey
+                                          .currentState!.isEndDrawerOpen) {
+                                    Navigator.pop(context);
+                                  }
+                                },
+                                text: '',
+                                icon: Icon(
+                                  Icons.filter_list,
+                                  size: 20,
+                                ),
+                                options: FFButtonOptions(
+                                  height: 40,
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      16, 0, 16, 0),
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                      0, 0, 0, 0),
+                                  color: Color(0xFF030303),
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .override(
+                                        fontFamily: 'Inter Tight',
+                                        color: Colors.white,
+                                        fontSize: 18,
+                                        letterSpacing: 0.0,
+                                      ),
+                                  elevation: 0,
+                                  borderRadius: BorderRadius.circular(8),
+                                ),
+                              ),
+                            ),
+                            Align(
+                              alignment: AlignmentDirectional(0.36, -0.58),
+                              child: FFButtonWidget(
+                                onPressed: () async {
+                                  context.pushNamed('Details20Property');
+                                },
+                                text: 'Safety Tips',
+                                icon: Icon(
+                                  Icons.shield,
+                                  size: 15,
+                                ),
+                                options: FFButtonOptions(
+                                  width: 270,
+                                  height: 40,
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      16, 0, 16, 0),
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                      0, 0, 0, 0),
+                                  color: Color(0xFF2C2C2E),
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .override(
+                                        fontFamily: 'Inter Tight',
+                                        color: Colors.white,
+                                        letterSpacing: 0.0,
+                                      ),
+                                  elevation: 0,
+                                  borderRadius: BorderRadius.circular(0),
+                                ),
+                              ),
+                            ),
+                            Align(
+                              alignment: AlignmentDirectional(0.36, -0.46),
+                              child: FFButtonWidget(
+                                onPressed: () {
+                                  print('Button pressed ...');
+                                },
+                                text: 'Payment Options',
+                                icon: Icon(
+                                  Icons.payment_sharp,
+                                  size: 15,
+                                ),
+                                options: FFButtonOptions(
+                                  width: 270,
+                                  height: 40,
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      16, 0, 16, 0),
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                      0, 0, 0, 0),
+                                  color: Color(0xFF2C2C2E),
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .override(
+                                        fontFamily: 'Inter Tight',
+                                        color: Colors.white,
+                                        letterSpacing: 0.0,
+                                      ),
+                                  elevation: 0,
+                                  borderRadius: BorderRadius.circular(0),
+                                ),
+                              ),
+                            ),
+                            Align(
+                              alignment: AlignmentDirectional(0.33, -0.34),
+                              child: FFButtonWidget(
+                                onPressed: () async {
+                                  context.pushNamed(
+                                    'FEEDBACK',
+                                    extra: <String, dynamic>{
+                                      kTransitionInfoKey: TransitionInfo(
+                                        hasTransition: true,
+                                        transitionType: PageTransitionType.fade,
+                                        duration: Duration(milliseconds: 0),
+                                      ),
+                                    },
+                                  );
+                                },
+                                text: 'Feedback',
+                                icon: Icon(
+                                  Icons.feed_outlined,
+                                  size: 15,
+                                ),
+                                options: FFButtonOptions(
+                                  width: 270,
+                                  height: 40,
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      16, 0, 16, 0),
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                      0, 0, 0, 0),
+                                  color: Color(0xFF2C2C2E),
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .override(
+                                        fontFamily: 'Inter Tight',
+                                        color: Colors.white,
+                                        letterSpacing: 0.0,
+                                      ),
+                                  elevation: 0,
+                                  borderRadius: BorderRadius.circular(0),
+                                ),
+                              ),
+                            ),
+                            Align(
+                              alignment: AlignmentDirectional(0.29, -0.7),
+                              child: FFButtonWidget(
+                                onPressed: () async {
+                                  context.pushNamed('homepage');
+                                },
+                                text: 'Home',
+                                icon: Icon(
+                                  Icons.home,
+                                  size: 15,
+                                ),
+                                options: FFButtonOptions(
+                                  width: 270,
+                                  height: 40,
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      16, 0, 16, 0),
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                      0, 0, 0, 0),
+                                  color: Color(0xFF2C2C2E),
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .override(
+                                        fontFamily: 'Inter Tight',
+                                        color: Colors.white,
+                                        letterSpacing: 0.0,
+                                      ),
+                                  elevation: 0,
+                                  borderSide: BorderSide(
+                                    color: Color(0xFF260707),
+                                  ),
+                                  borderRadius: BorderRadius.circular(0),
+                                ),
+                              ),
+                            ),
+                            Align(
+                              alignment: AlignmentDirectional(0.33, -0.22),
+                              child: FFButtonWidget(
+                                onPressed: () async {
+                                  context.pushNamed('SIGNUP');
+                                },
+                                text: 'Logout',
+                                icon: Icon(
+                                  Icons.logout_sharp,
+                                  size: 15,
+                                ),
+                                options: FFButtonOptions(
+                                  width: 270,
+                                  height: 40,
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      16, 0, 16, 0),
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                      0, 0, 0, 0),
+                                  color: Color(0xFF2C2C2E),
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .override(
+                                        fontFamily: 'Inter Tight',
+                                        color: Colors.white,
+                                        letterSpacing: 0.0,
+                                      ),
+                                  elevation: 0,
+                                  borderRadius: BorderRadius.circular(0),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Align(
+                  alignment: AlignmentDirectional(-0.01, -0.82),
+                  child: Text(
+                    'INSIGHTX',
+                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                          fontFamily: 'Raleway',
+                          color: Color(0xFFC1C3C5),
+                          fontSize: 18,
+                          letterSpacing: 0.0,
+                        ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+        body: NestedScrollView(
+          floatHeaderSlivers: true,
+          headerSliverBuilder: (context, _) => [
+            SliverAppBar(
+              pinned: true,
+              floating: false,
+              backgroundColor: Color(0xFF121212),
+              automaticallyImplyLeading: false,
+              leading: InkWell(
+                splashColor: Colors.transparent,
+                focusColor: Colors.transparent,
+                hoverColor: Colors.transparent,
+                highlightColor: Colors.transparent,
+                onTap: () async {
+                  scaffoldKey.currentState!.openDrawer();
+                },
+                child: Icon(
+                  Icons.filter_list_sharp,
+                  color: Color(0xFFEFF5F9),
+                  size: 24,
+                ),
+              ),
+              title: Text(
+                'INSIGHTX',
+                style: FlutterFlowTheme.of(context).headlineMedium.override(
+                      fontFamily: 'Montserrat',
+                      color: Colors.white,
+                      fontSize: 17,
+                      letterSpacing: 0.0,
+                      fontWeight: FontWeight.normal,
+                    ),
+              ),
+              actions: [],
+              bottom: PreferredSize(
+                preferredSize: Size.fromHeight(1),
+                child: Container(),
+              ),
+              centerTitle: true,
+              elevation: 2,
+            )
+          ],
+          body: Builder(
+            builder: (context) {
+              return SafeArea(
+                top: false,
+                child: Stack(
+                  children: [
+                    Stack(
+                      children: [
+                        Stack(
+                          children: [
+                            Stack(
+                              children: [
+                                Align(
+                                  alignment: AlignmentDirectional(0, 0),
+                                  child: Stack(
+                                    children: [
+                                      Align(
+                                        alignment:
+                                            AlignmentDirectional(0, -0.25),
+                                        child: Padding(
+                                          padding: EdgeInsets.all(16),
+                                          child: AnimatedDefaultTextStyle(
+                                            style: FlutterFlowTheme.of(context)
+                                                .titleSmall
+                                                .override(
+                                                  fontFamily: 'Inter Tight',
+                                                  color: Color(0xFF39393A),
+                                                  letterSpacing: 0.0,
+                                                ),
+                                            duration:
+                                                Duration(milliseconds: 3000),
+                                            curve: Curves.easeIn,
+                                            child: Text(
+                                              'InsightX – Your roadside assistance app. One tap for help or real-time tracking. Fast and reliable!',
+                                              textAlign: TextAlign.center,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      Align(
+                                        alignment: AlignmentDirectional(0, 0),
+                                        child: InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            context.pushNamed('sosCONN');
+                                          },
+                                          child: Container(
+                                            width: 371,
+                                            height: 103,
+                                            decoration: BoxDecoration(
+                                              color: Color(0xFE000000),
+                                              borderRadius:
+                                                  BorderRadius.circular(24),
+                                              shape: BoxShape.rectangle,
+                                              border: Border.all(
+                                                color: Color(0xFF0816A2),
+                                              ),
+                                            ),
+                                          ),
+                                        ).animateOnPageLoad(animationsMap[
+                                            'containerOnPageLoadAnimation']!),
+                                      ),
+                                      Align(
+                                        alignment:
+                                            AlignmentDirectional(0, -0.04),
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  45, 0, 45, 0),
+                                          child: GradientText(
+                                            'GET INSTANT ROADSIDE HELP WITH JUST ONE TAP. WHETHER IT\'S A FLAT TIRE, TOWING, OR FUEL DELIVERY, WE’VE GOT YOU COVERED.',
+                                            textAlign: TextAlign.center,
+                                            style: FlutterFlowTheme.of(context)
+                                                .titleMedium
+                                                .override(
+                                                  fontFamily: 'Montserrat',
+                                                  color: Color(0xFF353434),
+                                                  fontSize: 12,
+                                                  letterSpacing: 1,
+                                                  fontWeight: FontWeight.w300,
+                                                  lineHeight: 1,
+                                                ),
+                                            colors: [
+                                              Color(0xFFF7F7F8),
+                                              Color(0xFFF1E8E8)
+                                            ],
+                                            gradientDirection:
+                                                GradientDirection.ltr,
+                                            gradientType: GradientType.linear,
+                                          ),
+                                        ),
+                                      ),
+                                      Align(
+                                        alignment:
+                                            AlignmentDirectional(0.17, 1),
+                                        child: Container(
+                                          width: 371,
+                                          height: 103,
+                                          decoration: BoxDecoration(
+                                            color: Color(0xFE000000),
+                                            borderRadius:
+                                                BorderRadius.circular(24),
+                                            shape: BoxShape.rectangle,
+                                            border: Border.all(
+                                              color: Color(0xFF0816A2),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      Align(
+                                        alignment:
+                                            AlignmentDirectional(0, 0.89),
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  45, 0, 45, 0),
+                                          child: GradientText(
+                                            'STAY UPDATED WITH REAL-TIME TRACKING OF YOUR SERVICE PROVIDER’S LOCATION AND ESTIMATED ARRIVAL TIME.',
+                                            textAlign: TextAlign.center,
+                                            style: FlutterFlowTheme.of(context)
+                                                .titleMedium
+                                                .override(
+                                                  fontFamily: 'Montserrat',
+                                                  color: Color(0xFF353434),
+                                                  fontSize: 12,
+                                                  letterSpacing: 1,
+                                                  fontWeight: FontWeight.w300,
+                                                  lineHeight: 1,
+                                                ),
+                                            colors: [
+                                              Color(0xFFF7F7F8),
+                                              Color(0xFFF2E8E8)
+                                            ],
+                                            gradientDirection:
+                                                GradientDirection.ltr,
+                                            gradientType: GradientType.linear,
+                                          ),
+                                        ),
+                                      ),
+                                      Align(
+                                        alignment:
+                                            AlignmentDirectional(0.02, 1.02),
+                                        child: Padding(
+                                          padding: EdgeInsets.all(16),
+                                          child: GradientText(
+                                            'Live ETA',
+                                            textAlign: TextAlign.center,
+                                            style: FlutterFlowTheme.of(context)
+                                                .titleSmall
+                                                .override(
+                                                  fontFamily: 'Inter Tight',
+                                                  color: Color(0xFFF5F8F9),
+                                                  fontSize: 25,
+                                                  letterSpacing: 0.0,
+                                                ),
+                                            colors: [
+                                              Color(0xFFEFEEF2),
+                                              Color(0xFF646666)
+                                            ],
+                                            gradientDirection:
+                                                GradientDirection.ltr,
+                                            gradientType: GradientType.linear,
+                                          ),
+                                        ),
+                                      ),
+                                      Align(
+                                        alignment:
+                                            AlignmentDirectional(-0.05, 0.56),
+                                        child: FlutterFlowWebView(
+                                          content:
+                                              '<iframe\n    src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19220.343844760052!2d77.7252577!3d13.3508814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae16773c548eed%3A0xb9434aad7474e7df!2sNagarjuna%20College%20Of%20Engineering%20%26%20Technology!5e0!3m2!1sen!2sin!4v1636079477483!5m2!1sen!2sin\"\n    width=\"600\"\n    height=\"450\"\n    style=\"border:0;\"\n    allowfullscreen=\"\"\n    loading=\"lazy\"></iframe>\n',
+                                          width: 350,
+                                          height: 180,
+                                          verticalScroll: true,
+                                          horizontalScroll: true,
+                                          html: true,
+                                        ),
+                                      ),
+                                      Align(
+                                        alignment:
+                                            AlignmentDirectional(0.02, 0.06),
+                                        child: Padding(
+                                          padding: EdgeInsets.all(16),
+                                          child: GradientText(
+                                            'SOS Connect',
+                                            textAlign: TextAlign.center,
+                                            style: FlutterFlowTheme.of(context)
+                                                .titleSmall
+                                                .override(
+                                                  fontFamily: 'Inter Tight',
+                                                  color: Color(0xFFF5F8F9),
+                                                  fontSize: 25,
+                                                  letterSpacing: 0.0,
+                                                ),
+                                            colors: [
+                                              Color(0xFFEFEEF2),
+                                              Color(0xFF646666)
+                                            ],
+                                            gradientDirection:
+                                                GradientDirection.ltr,
+                                            gradientType: GradientType.linear,
+                                          ),
+                                        ),
+                                      ),
+                                      Align(
+                                        alignment: AlignmentDirectional(0, -1),
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0, 50, 0, 0),
+                                          child: Container(
+                                            width: double.infinity,
+                                            height: 220,
+                                            child: CarouselSlider(
+                                              items: [
+                                                InkWell(
+                                                  splashColor:
+                                                      Colors.transparent,
+                                                  focusColor:
+                                                      Colors.transparent,
+                                                  hoverColor:
+                                                      Colors.transparent,
+                                                  highlightColor:
+                                                      Colors.transparent,
+                                                  onTap: () async {
+                                                    context.pushNamed(
+                                                        'ALLSERVICES');
+                                                  },
+                                                  child: ClipRRect(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            8),
+                                                    child: Image.asset(
+                                                      'assets/images/DALLE_2024-10-29_18.31.50_-_An_artistic_representation_of_a_roadside_assistance_service_in_action._The_image_features_a_mechanic_assisting_a_stranded_driver_on_the_side_of_the_ro.webp',
+                                                      width: 200,
+                                                      height: 258,
+                                                      fit: BoxFit.fill,
+                                                    ),
+                                                  ),
+                                                ),
+                                                InkWell(
+                                                  splashColor:
+                                                      Colors.transparent,
+                                                  focusColor:
+                                                      Colors.transparent,
+                                                  hoverColor:
+                                                      Colors.transparent,
+                                                  highlightColor:
+                                                      Colors.transparent,
+                                                  onTap: () async {
+                                                    context.pushNamed(
+                                                        'ALLSERVICES');
+                                                  },
+                                                  child: Hero(
+                                                    tag: 'hhh',
+                                                    transitionOnUserGestures:
+                                                        true,
+                                                    child: ClipRRect(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              24),
+                                                      child: Image.asset(
+                                                        'assets/images/DALLE_2024-10-29_18.31.44_-_A_promotional_graphic_for_a_roadside_assistance_app_named_InsightX._The_image_should_depict_a_car_in_a_scenic_roadside_setting_with_a_smartphone_dis.webp',
+                                                        width: 200,
+                                                        height: 200,
+                                                        fit: BoxFit.fill,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ).animateOnPageLoad(animationsMap[
+                                                    'imageOnPageLoadAnimation']!),
+                                                InkWell(
+                                                  splashColor:
+                                                      Colors.transparent,
+                                                  focusColor:
+                                                      Colors.transparent,
+                                                  hoverColor:
+                                                      Colors.transparent,
+                                                  highlightColor:
+                                                      Colors.transparent,
+                                                  onTap: () async {
+                                                    context.pushNamed(
+                                                        'ALLSERVICES');
+                                                  },
+                                                  child: ClipRRect(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            8),
+                                                    child: Image.asset(
+                                                      'assets/images/DALLE_2024-10-29_18.31.48_-_A_digital_illustration_of_the_features_of_a_mobile_app_named_InsightX,_focused_on_roadside_assistance._The_image_should_include_icons_representing_v.webp',
+                                                      width: 231,
+                                                      height: 200,
+                                                      fit: BoxFit.fill,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                              carouselController: _model
+                                                      .carouselController ??=
+                                                  CarouselSliderController(),
+                                              options: CarouselOptions(
+                                                initialPage: 1,
+                                                viewportFraction: 0.5,
+                                                disableCenter: true,
+                                                enlargeCenterPage: true,
+                                                enlargeFactor: 0.25,
+                                                enableInfiniteScroll: true,
+                                                scrollDirection:
+                                                    Axis.horizontal,
+                                                autoPlay: false,
+                                                onPageChanged:
+                                                    (index, _) async {
+                                                  _model.carouselCurrentIndex =
+                                                      index;
+
+                                                  context
+                                                      .pushNamed('ALLSERVICES');
+                                                },
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      Align(
+                                        alignment:
+                                            AlignmentDirectional(0.01, -0.95),
+                                        child: Text(
+                                          'EXPLORE OUR SERVICES',
+                                          style: FlutterFlowTheme.of(context)
+                                              .headlineMedium
+                                              .override(
+                                                fontFamily: 'Montserrat',
+                                                color: Color(0xFF131313),
+                                                fontSize: 17,
+                                                letterSpacing: 0.0,
+                                                fontWeight: FontWeight.w600,
+                                              ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              );
+            },
+          ),
+        ),
+      ),
+    );
+  }
+}
