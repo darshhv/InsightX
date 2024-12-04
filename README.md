@@ -82,7 +82,7 @@ This step involves downloading the project files from the repository.
 
 bash
 Copy code
-git clone https://github.com/yourusername/insightx.git
+git clone https://github.com/darshhv/insightx.git
 Replace yourusername with your actual GitHub username if this is a private or personal repository.
 The git clone command will create a directory named insightx (same as the repository name) and download all project files.
 Potential Issues:
